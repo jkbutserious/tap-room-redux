@@ -1,14 +1,14 @@
 import React from "react";
-import {v4} from "uuid";
+import { v4 } from "uuid";
+import PropTypes from "prop-types";
 
 function NewKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    console.log(event.target.names.value);
-    console.log(event.target.location.value);
-    console.log(event.target.issue.value);
+    props.onNewKegCreation({names: event.target.names, location: event.target.location.value, issue: event.target.issue.value, id: v4()});
   }
+
   return (
     <React.Fragment>
     <form onSubmit={handleNewKegFormSubmission}>
@@ -27,5 +27,9 @@ function NewKegForm(props){
   </form>    </React.Fragment>
   );
 }
+
+NewKegForm.propTypes = {
+  oneNewKegCreation: PropTypes.func
+};
 
 export default NewKegForm;
