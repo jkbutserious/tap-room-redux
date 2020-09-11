@@ -6,7 +6,7 @@ function NewKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    props.onNewKegCreation({names: event.target.names, location: event.target.location.value, issue: event.target.issue.value, id: v4()});
+    props.onNewKegCreation({name: event.target.name.value, brand: event.target.brand.value, price: event.target.price.value, alcoholContent: event.target.alcoholContent.value, id: v4()});
   }
 
   return (
@@ -14,15 +14,20 @@ function NewKegForm(props){
     <form onSubmit={handleNewKegFormSubmission}>
     <input
       type='text'
-      name='names'
-      placeholder='Pair Names' />
+      name='name'
+      placeholder='Keg Name' />
     <input
       type='text'
-      name='location'
-      placeholder='Location' />
-    <textarea
-      name='issue'
-      placeholder='Describe your issue.' />
+      name='brand'
+      placeholder='Brand' />
+    <input
+      type='text'
+      name='price'
+      placeholder='Price' />
+    <input
+      type='text'
+      name='alcoholContent'
+      placeholder='Alcohol Content' />
     <button type='submit'>Help!</button>
   </form>    </React.Fragment>
   );
