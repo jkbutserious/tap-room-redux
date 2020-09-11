@@ -1,29 +1,11 @@
 import React from "react";
 import Keg from "./Keg";
 
-const masterKegList = [
-  {
-    names: 'Thato and Haley',
-    location: '3A',
-    issue: 'Firebase won\'t save record. Halp.'
-  },
-  {
-    names: 'Sleater and Kinney',
-    location: '4B',
-    issue: 'Prop types are throwing an error.'
-  },
-  {
-    names: 'Imani & Jacob',
-    location: '9F',
-    issue: 'Child component isn\'t rendering.'  
-  }
-]
-
-function KegList(){
+function KegList(props){
   return (
     <React.Fragment>
       <hr/>
-      {masterKegList.map((keg, index) =>
+      {props.kegList.map((keg, index) =>
       <Keg names={keg.names}
         location={keg.location}
         issue={keg.issue}
@@ -31,6 +13,10 @@ function KegList(){
       )}
     </React.Fragment>
   );
+}
+
+KegList.propTypes = {
+  kegList: PropTypes.array
 }
 
 export default KegList;
