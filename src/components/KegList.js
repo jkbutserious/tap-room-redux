@@ -7,9 +7,9 @@ function KegList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.kegList.map((keg, index) =>
+      {props.kegList.map((keg) =>
       <Keg
-        whenKegClicked = { props.onTicketSelection }
+        whenKegClicked = { props.onKegSelection }
         name={keg.name}
         brand={keg.brand}
         price={keg.price}
@@ -23,7 +23,8 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  onKegSelection: PropTypes.func
 }
 
 export default KegList;

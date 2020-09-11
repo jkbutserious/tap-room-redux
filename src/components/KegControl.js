@@ -54,7 +54,7 @@ class KegControl extends React.Component {
       buttonText = "Return to Keg List";
     }
     else {
-      currentlyVisibleState = <KegList kegList ={this.state.masterKegList} onKegSelectio={this.handleChangeingSelectedKeg} />
+      currentlyVisibleState = <KegList kegList = {this.state.masterKegList} onKegSelection={this.handleChangeingSelectedKeg} />
       buttonText = "Add Keg";
     }
     return (

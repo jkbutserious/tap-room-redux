@@ -6,10 +6,10 @@ function KegDetail(props){
   
   return(
     <React.Fragment>
-      <h3>{props.brand} - {props.name}</h3>
-        <p>Alcohol Content: {props.alcoholContent}</p>
-        <p>Pints Left: {props.pintsLeft}</p>
-        <p><em>${props.price}</em></p>
+      <h3>{keg.brand} - {keg.name}</h3>
+        <p>Alcohol Content: {keg.alcoholContent}</p>
+        <p>Pints Left: {keg.pintsLeft}</p>
+        <p><em>${keg.price}</em></p>
       <hr/>
     </React.Fragment>
   )
@@ -19,4 +19,4 @@ KegDetail.propTypes = {
   keg: PropTypes.object
 };
 
-export default TicketDetail;
+export default KegDetail;
