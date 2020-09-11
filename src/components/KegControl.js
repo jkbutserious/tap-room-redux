@@ -21,6 +21,7 @@ class KegControl extends React.Component {
       formVisibleOnPage: false
     });
   }
+  handleChangeingSelectedKeg
 
   handleClick = () => {
     this.setState(prevState => ({

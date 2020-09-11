@@ -14,7 +14,8 @@ function Keg(props){
 Keg.propTypes = {
   names: PropTypes.string,
   location: PropTypes.string,
-  issue: PropTypes.string
+  issue: PropTypes.string,
+  id: PropTypes.string
 }
 
 export default Keg;

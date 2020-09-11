@@ -10,7 +10,7 @@ function KegList(props){
       <Keg names={keg.names}
         location={keg.location}
         issue={keg.issue}
-        key={index}/>
+        id={keg.id}/>
       )}
     </React.Fragment>
   );

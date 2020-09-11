@@ -29,7 +29,7 @@ function NewKegForm(props){
 }
 
 NewKegForm.propTypes = {
-  oneNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func
 };
 
 export default NewKegForm;
