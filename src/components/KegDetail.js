@@ -7,11 +7,9 @@ function KegDetail(props){
   function handleSellingPint(){    
     if (keg.pintsLeft === 1 || keg.pintsLeft === "This keg is empty") {
       props.onSellingPint(keg.pintsLeft = "This keg is empty")
-      // props.onSellingPint({name: keg.name, brand: keg.brand, price: keg.price, alcoholContent: keg.alcoholContent, pintsLeft: keg.pintsLeft, id: keg.id});
     }
     else {
       props.onSellingPint(keg.pintsLeft--)
-      // props.onSellingPint({name: keg.name, brand: keg.brand, price: keg.price, alcoholContent: keg.alcoholContent, pintsLeft: keg.pintsLeft - 1, id: keg.id});
     }
   }
   
