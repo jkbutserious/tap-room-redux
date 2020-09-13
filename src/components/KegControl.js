@@ -22,6 +22,7 @@ class KegControl extends React.Component {
       formVisibleOnPage: false
     });
   }
+
   handleChangeingSelectedKeg =  (id) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({selectedKeg: selectedKeg});
@@ -46,7 +47,7 @@ class KegControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onSellingPint={this.handleSellingPint} />
       buttonText = "Return to Keg List"
     }
     else if (this.state.formVisibleOnPage) {
