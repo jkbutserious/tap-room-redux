@@ -5,13 +5,14 @@ function KegDetail(props){
   const { keg } = props;
 
   function handleSellingPint(){    
-    if (keg.pintsLeft > 0) {
-      props.onSellingPint({pintsLeft: keg.pintsLeft - 1});
+    if (keg.pintsLeft === 0) {
+      props.onSellingPint(keg.pintsLeft = 0)
+      // props.onSellingPint({name: keg.name, brand: keg.brand, price: keg.price, alcoholContent: keg.alcoholContent, pintsLeft: keg.pintsLeft, id: keg.id});
     }
     else {
-      props.onSellingPint({pintsLeft: keg.pintsLeft = 0});
+      props.onSellingPint(keg.pintsLeft--)
+      // props.onSellingPint({name: keg.name, brand: keg.brand, price: keg.price, alcoholContent: keg.alcoholContent, pintsLeft: keg.pintsLeft - 1, id: keg.id});
     }
-    this.forceUpdate();
   }
   
   return(
