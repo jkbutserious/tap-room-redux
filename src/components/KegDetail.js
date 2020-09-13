@@ -12,16 +12,22 @@ function KegDetail(props){
       props.onSellingPint(keg.pintsLeft--)
     }
   }
+
+  function handleRestockingKeg(){
+    props.onRestockingKeg(keg.pintsLeft = 124)
+  }
   
   return(
     <React.Fragment>
-      <h3>{keg.brand} - {keg.name}</h3>
-        <p>Alcohol Content: {keg.alcoholContent}</p>
+      <h3>{keg.name}</h3>
+        <p>Brewery: {keg.brand}</p>
+        <p>Alcohol by Volume: {keg.alcoholContent}%</p>
         <p>Pints Left: {keg.pintsLeft}</p>
-        <p><em>${keg.price}</em></p>
+        <p><em>${keg.price} per pint</em></p>
       <hr/>
 
       <button onClick={handleSellingPint}>Sell a Pint</button>
+      <button onClick={handleRestockingKeg}>Restock this Keg</button>
 
     </React.Fragment>
   )
