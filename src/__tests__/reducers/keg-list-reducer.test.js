@@ -2,13 +2,20 @@ import kegListReducer from '../../reducers/keg-list-reducer.js';
 
 describe('kegListReducer', () => {
 
-  let action;
-  const ticketData = {
-    names: 'Ryan & Aimen',
-    location: '4b',
-    issue: 'Redux action is not working correctly.',
-    id: 1
-  };
+  const currentState = {
+    1: {name: 'Fire Water',
+    brand: 'Rul Good Whiskey',
+    price: '4.99',
+    alcoholContent: '10',
+    pintsLeft: 124,
+    id: 1 },
+    2: {name: 'Water Water',
+    brand: 'Okay Whiskey',
+    price: '4.99',
+    alcoholContent: '10',
+    pintsLeft: 124,
+    id: 2 }
+  }
 
   test('Should return default state if there is no action type passed into the reducer', () => {
     expect(kegListReducer({}, { type: null })).toEqual({});
