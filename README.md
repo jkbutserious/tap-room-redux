@@ -140,6 +140,7 @@ To report any issues with this page or to contribute to this project, contact Je
 
 * JavaScript
 * React
+* Redux
 * Node JS
 * Visual Studio Code 
 * Git and Git BASH 
