@@ -12,17 +12,27 @@ describe('kegListReducer', () => {
     2: {name: 'Water Water',
     brand: 'Okay Whiskey',
     price: '4.99',
-    alcoholContent: '10',
+    alcoholContent: '1',
     pintsLeft: 124,
     id: 2 }
+  }
+
+  let action;
+  const kegData = {
+    name: 'Fire Water',
+    brand: 'Rul Good Whiskey',
+    price: '4.99',
+    alcoholContent: '10',
+    pintsLeft: 124,
+    id: 1
   }
 
   test('Should return default state if there is no action type passed into the reducer', () => {
     expect(kegListReducer({}, { type: null })).toEqual({});
   });
 
-  test('Should successfully add new ticket data to masterKegList', () => {
-    const { name, brand, price, alcoholContent, pintsLeft, id } = ticketData;
+  test('Should successfully add new keg data to masterKegList', () => {
+    const { name, brand, price, alcoholContent, pintsLeft, id } = kegData;
     action = {
       type: 'ADD_KEG',
       name: name,
@@ -54,7 +64,7 @@ describe('kegListReducer', () => {
       2: {name: 'Water Water',
       brand: 'Okay Whiskey',
       price: '4.99',
-      alcoholContent: '10',
+      alcoholContent: '1',
       pintsLeft: 124,
       id: 2 }
     });
