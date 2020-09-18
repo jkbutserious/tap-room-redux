@@ -1,4 +1,4 @@
-# Tap Room
+# Tap Room Redux
 
 #### React and JavaScript Functional Programming Exercise for Epicodus, 09.11.2020
 
