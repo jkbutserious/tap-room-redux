@@ -2,6 +2,8 @@ import kegListReducer from '../../reducers/keg-list-reducer.js';
 
 describe('kegListReducer', () => {
 
+  let action;
+
   const currentState = {
     1: {name: 'Fire Water',
     brand: 'Rul Good Whiskey',
@@ -17,7 +19,6 @@ describe('kegListReducer', () => {
     id: 2 }
   }
 
-  let action;
   const kegData = {
     name: 'Fire Water',
     brand: 'Rul Good Whiskey',
