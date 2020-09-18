@@ -44,4 +44,19 @@ describe('kegListReducer', () => {
       }
     });
   });
+
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: 'DELETE_KEG',
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {name: 'Water Water',
+      brand: 'Okay Whiskey',
+      price: '4.99',
+      alcoholContent: '10',
+      pintsLeft: 124,
+      id: 2 }
+    });
+  });
 });
