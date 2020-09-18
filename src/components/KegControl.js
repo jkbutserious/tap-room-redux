@@ -34,31 +34,33 @@ class KegControl extends React.Component {
     this.setState({formVisibleOnPage: false});
   }
 
-  handleEditingTicketInList = (ticketToEdit) => {
+  handleEditingKegInList = (kegToEdit) => {
     const { dispatch } = this.props;
-    const { id, names, location, issue } = ticketToEdit;
+    const { id, name, brand, price, alcoholContent, pintsLeft } = kegToEdit;
     const action = {
-      type: 'ADD_TICKET',
+      type: 'ADD_KEG',
       id: id,
-      names: names,
-      location: location,
-      issue: issue,
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      pintsLeft: pintsLeft,
     }
     dispatch(action);
     this.setState({
       editing: false,
-      selectedTicket: null
+      selectedKeg: null
     });
   }
 
-  handleDeletingTicket = (id) => {
+  handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
     const action = {
-      type: 'DELETE_TICKET',
+      type: 'DELETE_KEG',
       id: id
     }
     dispatch(action);
-    this.setState({selectedTicket: null});
+    this.setState({selectedKeg: null});
   }
 
   handleReducingPintsLeft = () => {
@@ -113,6 +115,13 @@ class KegControl extends React.Component {
   }
 }
 
-KegControl = connect()(KegControl);
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 export default KegControl;
